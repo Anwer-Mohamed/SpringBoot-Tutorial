@@ -8,13 +8,40 @@ import org.springframework.data.relational.core.mapping.Table;
 public class Officer {
 	
 	@Id
-	@Column("")
+	@Column("officer_id")
 	private Long id;
 	
+	private Long serial_num;
 	
 	private String name;
 	
-	private Double salary; 
+	private Long whda_id;
+	
+	
+	
+	
+	
+	public Long getSerial_num() {
+		return serial_num;
+	}
+
+
+	public void setSerial_num(Long serial_num) {
+		this.serial_num = serial_num;
+	}
+
+
+	public Long getWhda_id() {
+		return whda_id;
+	}
+
+
+	public void setWhda_id(Long whda_id) {
+		this.whda_id = whda_id;
+	}
+
+
+	
 	
 	
 	public Officer() {
@@ -41,14 +68,5 @@ public class Officer {
 		this.name = name;
 	}
 
-
-	public Double getSalary() {
-		return salary;
-	}
-
-
-	public void setSalary(Double salary) {
-		this.salary = salary;
-	}
 
 }
