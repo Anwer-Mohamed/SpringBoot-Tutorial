@@ -1,20 +1,28 @@
 package com.global.tutorial.Officer.Model;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.relational.core.mapping.Column;
-import org.springframework.data.relational.core.mapping.Table;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
-@Table("officer")
+@Entity
+@Table(name ="officer")
 public class Officer {
 	
 	@Id
-	@Column("officer_id")
+	@Column(name="officer_id")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
+	@Column(name = "serial_num")
 	private Long serial_num;
 	
+	@Column(name = "name")
 	private String name;
 	
+	@Column(name = "whda_id")
 	private Long whda_id;
 	
 	
