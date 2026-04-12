@@ -3,6 +3,7 @@ package com.global.tutorial.Officer.Controller;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -41,9 +42,18 @@ public class OfficerController {
 	public void deleteById(@RequestParam Long id) {
 		officerService.deleteById(id);
 	}
-	@GetMapping("all")
+	@GetMapping("/all")
 	public Iterable<Officer> findAll() {
 		  return officerService.findAll();
+	}
+	
+	@GetMapping("/home")
+	public Page<Officer> home(@RequestParam int page,
+								  @RequestParam int size,
+								  @RequestParam String sortedBy,
+								  @RequestParam Boolean isAsc){
+		
+		  return officerService.home(page,size,sortedBy,isAsc);
 	}
 	
 	
