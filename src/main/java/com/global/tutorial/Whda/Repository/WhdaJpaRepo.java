@@ -13,9 +13,12 @@ import com.global.tutorial.Whda.Model.Whda;
 @Repository
 public interface WhdaJpaRepo extends JpaRepository<Whda,Long> {
 	
-	@Query(value = "select * from officer where whda_id = :id " , nativeQuery = true)
+	@Query(value = "select * from officer where whda_id = :id " 
+			, nativeQuery = true)
 	public List<Officer> getOfficerOfWhda(@Param("id") Long id);
+	
 	
 	@Query(value = "select whda_id from whda where name = :name" , nativeQuery = true)
 	public Long getWhdaIdByname(@Param("name") String name);
+	
 }

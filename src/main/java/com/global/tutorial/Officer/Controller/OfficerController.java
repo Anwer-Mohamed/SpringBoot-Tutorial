@@ -56,5 +56,11 @@ public class OfficerController {
 		  return officerService.home(page,size,sortedBy,isAsc);
 	}
 	
+	@GetMapping("/salary/{id}")
+	public Optional<?> getSalaryById(@PathVariable Long id) {
+		return officerService.getSalaryById(id);
+	}
+	
+	
 	
 }
